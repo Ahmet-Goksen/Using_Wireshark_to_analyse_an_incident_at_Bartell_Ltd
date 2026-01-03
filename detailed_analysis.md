@@ -23,7 +23,7 @@ Eric Fischer from the Purchasing Department at Bartell Ltd received an email fro
 *   **First Step:** Identified the first suspicious HTTP connection using the filter: `http`.
 *   **Key Packet:** Located Packet No. **1735**, a GET request to malicious IP `85.187.128.24` at **Sep 24, 2021 16:44:38**.
 <div style="width: 75%;">
-![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/1.-Key_Packet.png)
+   ![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/1.-Key_Packet.png)
 </div>
 
 ![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/Confirmed-download.png)
