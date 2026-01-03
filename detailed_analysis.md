@@ -23,18 +23,18 @@ Eric Fischer from the Purchasing Department at Bartell Ltd received an email fro
 *   **First Step:** Identified the first suspicious HTTP connection using the filter: `http`.
 *   **Key Packet:** Located Packet No. **1735**, a GET request to malicious IP `85.187.128.24` at **Sep 24, 2021 16:44:38**.
 
-![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/1.-Key_Packet.png)
+![Wireshark-1](screenshots/1.-Key_Packet.png)
 
 *   **Downloaded File:** Determined the file `documents.zip` was downloaded to victim host `10.9.23.102`.
 *   **Malicious Domain:** From packet bytes, identified the hosting domain as **`attirenepal.com`**.
 *   **File Export:** Used `File -> Export Objects -> HTTP…` in Wireshark to extract `documents.zip`. The archive contained one file: **`chart-1530076591.xls`**. This file can be validated as malicious by submitting its SHA-256 hash into threat intelligence platforms e.g VirusTotal.
 *   **Web Server Info:** Analysed the HTTP response header: Server was **`LiteSpeed`** running **`PHP/7.2.34`**.
 
-![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/Confirmed-download.png)
+![Wireshark-2](screenshots/Confirmed-download.png)
 
-![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/Export-Objects-1.png)
+![Wireshark-3](screenshots/Export-Objects-1.png)
 
-![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/Export-Objects-2.png)
+![Wireshark-4](screenshots/Export-Objects-2.png)
 
 ### 2. HTTPS Traffic & Encrypted Downloads
 *   **Filter Applied:** `(tls) && (tls.handshake.type == 1)` to inspect TLS `Client Hello` packets.
@@ -46,15 +46,15 @@ Eric Fischer from the Purchasing Department at Bartell Ltd received an email fro
     *   `new.americold.com`
 *   **Certificate Analysis:** For `finejewels.com.au`, found the issuing Certificate Authority in the `Server Key Exchange` packet to be **GoDaddy**.
 
-![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/HTTPS-Traffic-&-Encrypted-Downloads-part-1.png)
+![Wireshark-5](screenshots/HTTPS-Traffic-&-Encrypted-Downloads-part-1.png)
 
-![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/HTTPS-Traffic-&-Encrypted-Downloads-part-2.png)
+![Wireshark-6](screenshots/HTTPS-Traffic-&-Encrypted-Downloads-part-2.png)
 
-![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/HTTPS-Traffic-&-Encrypted-Downloads-part-3.png)
+![Wireshark-7](screenshots/HTTPS-Traffic-&-Encrypted-Downloads-part-3.png)
 
-![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/HTTPS-Traffic-&-Encrypted-Downloads-part-4.png)
+![Wireshark-8](screenshots/HTTPS-Traffic-&-Encrypted-Downloads-part-4.png)
 
-![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/HTTPS-Traffic-&-Encrypted-Downloads-part-5.png)
+![Wireshark-9](screenshots/HTTPS-Traffic-&-Encrypted-Downloads-part-5.png)
 
 ### 3. Command & Control (C2) Server Identification
 *   **HTTP Filter:** Re-applied `http` to hunt for C2 traffic.
@@ -64,22 +64,22 @@ Eric Fischer from the Purchasing Department at Bartell Ltd received an email fro
     *   **VirusTotal:** Confirmed as a **Cobalt Strike** server.
     *   **Host Header:** `ocsp.verisign.com` (attempted masquerading).
 
-![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/Suspicious-IP-1-185.106.96.158.png)
+![Wireshark-10](screenshots/Suspicious-IP-1-185.106.96.158.png)
 
 *   **Suspicious IP 2:** `185.125.204.174`
     *   **Activity:** Frequent `PSH, ACK` packets with high length (`Len=1460`) and entropy.
     *   **Domain:** `securitybusinpuff.com`.
     *   **VirusTotal:** Confirmed as a **Cobalt Strike** server.
 
-![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/Suspicious-IP-2-185.125.204.174.png)
+![Wireshark-11](screenshots/Suspicious-IP-2-185.125.204.174.png)
 
 *   **Additional C2:** IP `208.91.128.6` (domain `maldivehost.net`).
     *   **Activity:** High-entropy POST requests (e.g., `/zLIisQRWZI9/OQsaDixzHTgtfjMcGypGenpldWF5eWV9f3k=`).
     *   **Server Header:** `Apache/2.4.49 (cPanel) OpenSSL/1.1.1l mod_bwlimited/1.4`.
 
-![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/Additional-C2-IP-208.91.128.6-part-1.png)
+![Wireshark-12](screenshots/Additional-C2-IP-208.91.128.6-part-1.png)
 
-![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/Additional-C2-IP-208.91.128.6-part-2.png)
+![Wireshark-13](screenshots/Additional-C2-IP-208.91.128.6-part-2.png)
 
 ### 4. Post-Compromise Activity
 *   **DNS Filter:** Applied `dns` to hunt for post-compromise activity.
@@ -89,13 +89,13 @@ Eric Fischer from the Purchasing Department at Bartell Ltd received an email fro
     *   Initial attempts from `farshin@mailfa.com`.
     *   **Successful Compromise:** Attacker sent malspam from the hijacked account **`cristianodummer@cultura.com.br`**.
 
-![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/Post-Compromise-Activity-Part-1.png)
+![Wireshark-14](screenshots/Post-Compromise-Activity-Part-1.png)
 
-![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/Post-Compromise-Activity-Part-2.png)
+![Wireshark-15](screenshots/Post-Compromise-Activity-Part-2.png)
 
-![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/Post-Compromise-Activity-Part-3.png)
+![Wireshark-16](screenshots/Post-Compromise-Activity-Part-3.png)
 
-![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/Post-Compromise-Activity-Part-4.png)
+![Wireshark-17](screenshots/Post-Compromise-Activity-Part-4.png)
 
 ## MITRE ATT&CK Summary
 | Tactic | Technique | Evidence |
