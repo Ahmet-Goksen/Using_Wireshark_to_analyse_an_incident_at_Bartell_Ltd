@@ -22,6 +22,7 @@ Eric Fischer from the Purchasing Department at Bartell Ltd received an email fro
 ### 1. Initial Malicious Download Analysis
 *   **First Step:** Identified the first suspicious HTTP connection using the filter: `http`.
 *   **Key Packet:** Located Packet No. **1735**, a GET request to malicious IP `85.187.128.24` at **Sep 24, 2021 16:44:38**.
+
 ![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/1.-Key_Packet.png)
 
 ![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/Confirmed-download.png)
@@ -30,6 +31,7 @@ Eric Fischer from the Purchasing Department at Bartell Ltd received an email fro
 *   **Malicious Domain:** From packet bytes, identified the hosting domain as **`attirenepal.com`**.
 *   **File Export:** Used `File -> Export Objects -> HTTP…` in Wireshark to extract `documents.zip`. The archive contained one file: **`chart-1530076591.xls`**.
 *   **Web Server Info:** Analysed the HTTP response header: Server was **`LiteSpeed`** running **`PHP/7.2.34`**.
+
 ![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/Export-Objects-1.png)
 
 ![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/Export-Objects-2.png)
@@ -43,6 +45,7 @@ Eric Fischer from the Purchasing Department at Bartell Ltd received an email fro
     *   `thietbiagt.com`
     *   `new.americold.com`
 *   **Certificate Analysis:** For `finejewels.com.au`, found the issuing Certificate Authority in the `Server Key Exchange` packet to be **GoDaddy**.
+
 ![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/HTTPS-Traffic-&-Encrypted-Downloads-part-1.png)
 
 ![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/HTTPS-Traffic-&-Encrypted-Downloads-part-2.png)
