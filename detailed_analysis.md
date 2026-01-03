@@ -63,10 +63,16 @@ Eric Fischer from the Purchasing Department at Bartell Ltd received an email fro
     *   **Domain:** `survmeter.live` (from DNS query).
     *   **VirusTotal:** Confirmed as a **Cobalt Strike** server.
     *   **Host Header:** `ocsp.verisign.com` (attempted masquerading).
+
+![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/Suspicious-IP-1-185.106.96.158.png)
+
 *   **Suspicious IP 2:** `185.125.204.174`
     *   **Activity:** Frequent `PSH, ACK` packets with high length (`Len=1460`) and entropy.
     *   **Domain:** `securitybusinpuff.com`.
     *   **VirusTotal:** Confirmed as a **Cobalt Strike** server.
+
+![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/Suspicious-IP-2-185.125.204.174.png)
+
 *   **Additional C2:** IP `208.91.128.6` (domain `maldivehost.net`).
     *   **Activity:** High-entropy POST requests (e.g., `/zLIisQRWZI9/OQsaDixzHTgtfjMcGypGenpldWF5eWV9f3k=`).
     *   **Server Header:** `Apache/2.4.49 (cPanel) OpenSSL/1.1.1l mod_bwlimited/1.4`.
