@@ -77,6 +77,10 @@ Eric Fischer from the Purchasing Department at Bartell Ltd received an email fro
     *   **Activity:** High-entropy POST requests (e.g., `/zLIisQRWZI9/OQsaDixzHTgtfjMcGypGenpldWF5eWV9f3k=`).
     *   **Server Header:** `Apache/2.4.49 (cPanel) OpenSSL/1.1.1l mod_bwlimited/1.4`.
 
+![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/Additional-C2-IP-208.91.128.6-part-1.png)
+
+![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/Additional-C2-IP-208.91.128.6-part-2.png)
+
 ### 4. Post-Compromise Activity
 *   **Victim Discovery:** The attacker used `api.apify.org` to check the victim's external IP address (**2021-09-24 17:00:04**).
 *   **Malicious Spam (Malspam):**
