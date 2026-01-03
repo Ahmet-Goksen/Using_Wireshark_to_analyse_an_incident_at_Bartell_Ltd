@@ -11,25 +11,25 @@ An employee at Bartell Ltd opened a weaponized Word document from a phishing ema
 *   **VirusTotal** - Threat intelligence platform for IOC (Indicator of Compromise) validation.
 *   **MITRE ATT&CK Framework** - Used to map adversary tactics and techniques.
 
-## 🔑 Key Achievements & Findings
+## Key Achievements & Findings
 *   **Full Attack Chain Reconstruction:** Traced the intrusion from the initial malicious file download (`documents.zip`) through to data exfiltration and malicious spam propagation.
 *   **C2 Infrastructure Exposure:** Identified and validated multiple **Cobalt Strike** command and control servers (`survmeter.live`, `securitybusinpuff.com`) through beaconing traffic patterns and threat intelligence correlation.
 *   **Encrypted Traffic Analysis:** Uncovered hidden malicious HTTPS downloads by analyzing TLS handshakes and correlating contacted domains with threat feeds.
 *   **Impact Verification:** Discovered post-compromise activity where the attacker hijacked an email account (`cristianodummer@cultura.com.br`) to send malicious spam from the victim's host.
 
-## ⚡ Attack Narrative Summary
+## Attack Narrative Summary
 1.  **Initial Access:** User downloaded `documents.zip` from `attirenepal.com`, containing the weaponized Excel file `chart-1530076591.xls`.
 2.  **Execution & C2 Establishment:** File execution led to infection, establishing persistent C2 channels with Cobalt Strike infrastructure.
 3.  **Discovery:** Attacker checked the victim's external IP address using the public API `api.apify.org`.
 4.  **Impact & Propagation:** The compromised host was used to send malicious spam (malspam) from a hijacked corporate email account.
 
-## 🛠️ Skills Demonstrated
+## Skills Demonstrated
 *   **Advanced Network Forensics:** Proficient use of Wireshark filters, packet dissection, and protocol analysis (HTTP/S, TLS, DNS, SMTP).
 *   **Threat Intelligence Integration:** Leveraged VirusTotal to pivot from suspicious IPs/domains to confirmed malicious infrastructure.
 *   **Attack Chain Analysis:** Connected discrete events across the network to build a coherent timeline and narrative of the intrusion.
 *   **Adversary Framework Mapping:** Accurately mapped observed behaviors to specific techniques in the **MITRE ATT&CK framework** (e.g., T1566.001, T1204.002, T1573.002).
 
-## 📋 MITRE ATT&CK Techniques Identified
+## MITRE ATT&CK Techniques Identified
 | Tactic | Technique | Evidence |
 | :--- | :--- | :--- |
 | **Initial Access** | T1566.001 - Phishing: Spearphishing Attachment | Download of `documents.zip` from phishing email. |
