@@ -84,20 +84,18 @@ Eric Fischer from the Purchasing Department at Bartell Ltd received an email fro
 ### 4. Post-Compromise Activity
 *   **DNS Filter:** Applied `dns` to hunt for post-compromise activity.
 *   **Victim Discovery:** The attacker used `api.apify.org` to check the victim's external IP address (**2021-09-24 17:00:04**).
-*   <img width="2416" height="1467" alt="Post-Compromise-Activity-Part-4" src="https://github.com/user-attachments/assets/57cf506d-e2b5-4db3-b314-99367b590b88" />
-
 *   **Malicious Spam (Malspam):**
     *   Identified **1439 SMTP packets**.
     *   Initial attempts from `farshin@mailfa.com`.
     *   **Successful Compromise:** Attacker sent malspam from the hijacked account **`cristianodummer@cultura.com.br`**.
 
-![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/Additional-C2-IP-208.91.128.6-part-2.png)
+![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/Post-Compromise-Activity-Part-1.png)
 
-![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/Additional-C2-IP-208.91.128.6-part-2.png)
+![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/Post-Compromise-Activity-Part-2.png)
 
-![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/Additional-C2-IP-208.91.128.6-part-2.png)
+![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/Post-Compromise-Activity-Part-3.png)
 
-![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/Additional-C2-IP-208.91.128.6-part-2.png)
+![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/Post-Compromise-Activity-Part-4.png)
 
 ## MITRE ATT&CK Summary
 | Tactic | Technique | Evidence |
