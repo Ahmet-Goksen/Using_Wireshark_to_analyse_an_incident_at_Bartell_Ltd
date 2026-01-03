@@ -29,7 +29,7 @@ Eric Fischer from the Purchasing Department at Bartell Ltd received an email fro
 
 *   **Downloaded File:** Determined the file `documents.zip` was downloaded to victim host `10.9.23.102`.
 *   **Malicious Domain:** From packet bytes, identified the hosting domain as **`attirenepal.com`**.
-*   **File Export:** Used `File -> Export Objects -> HTTP…` in Wireshark to extract `documents.zip`. The archive contained one file: **`chart-1530076591.xls`**.
+*   **File Export:** Used `File -> Export Objects -> HTTP…` in Wireshark to extract `documents.zip`. The archive contained one file: **`chart-1530076591.xls`**. This file can be validated as malicious by submitting its SHA-256 hash into threat intelligence platforms e.g VirusTotal.
 *   **Web Server Info:** Analysed the HTTP response header: Server was **`LiteSpeed`** running **`PHP/7.2.34`**.
 
 ![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/Export-Objects-1.png)
