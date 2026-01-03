@@ -43,6 +43,15 @@ Eric Fischer from the Purchasing Department at Bartell Ltd received an email fro
     *   `thietbiagt.com`
     *   `new.americold.com`
 *   **Certificate Analysis:** For `finejewels.com.au`, found the issuing Certificate Authority in the `Server Key Exchange` packet to be **GoDaddy**.
+![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/HTTPS-Traffic-&-Encrypted-Downloads-part-1.png)
+
+![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/HTTPS-Traffic-&-Encrypted-Downloads-part-2.png)
+
+![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/HTTPS-Traffic-&-Encrypted-Downloads-part-3.png)
+
+![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/HTTPS-Traffic-&-Encrypted-Downloads-part-4.png)
+
+![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/HTTPS-Traffic-&-Encrypted-Downloads-part-5.png)
 
 ### 3. Command & Control (C2) Server Identification
 *   **HTTP Filter:** Re-applied `http` to hunt for C2 traffic.
