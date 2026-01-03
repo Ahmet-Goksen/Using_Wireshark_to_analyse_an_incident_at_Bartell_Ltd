@@ -82,6 +82,7 @@ Eric Fischer from the Purchasing Department at Bartell Ltd received an email fro
 ![Screenshot of the SOC dashboard showing DNS exfiltration alerts](screenshots/Additional-C2-IP-208.91.128.6-part-2.png)
 
 ### 4. Post-Compromise Activity
+*   **DNS Filter:** Applied `dns` to hunt for post-compromise activity.
 *   **Victim Discovery:** The attacker used `api.apify.org` to check the victim's external IP address (**2021-09-24 17:00:04**).
 *   **Malicious Spam (Malspam):**
     *   Identified **1439 SMTP packets**.
